@@ -1,0 +1,13 @@
+language: ruby
+before_install:
+  - gem install bundler
+gemfile:
+  - Gemfile
+rvm:
+  - 1.9.3
+  - 2.0.0
+  - 2.1.1
+  - 2.1.2
+notifications:
+  email:
+    - muryoimpl@gmail.com
