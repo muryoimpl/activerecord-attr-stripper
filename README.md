@@ -1,4 +1,4 @@
-activerecord-attr-stripper
+activerecord-attr-stripper [![Build Status](https://travis-ci.org/muryoimpl/activerecord-attr-stripper.svg?branch=master)](https://travis-ci.org/muryoimpl/activerecord-attr-stripper)
 ==========================
 
 A ActiveRecord plugin which removes leading and trailing whitespace(include zenkaku space) of attributes before validation.
