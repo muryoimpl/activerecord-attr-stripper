@@ -1,3 +1,4 @@
+# coding: utf-8
 module Activerecord
   module Attr
     module Stripper

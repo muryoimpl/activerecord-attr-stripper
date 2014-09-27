@@ -1,3 +1,4 @@
+# coding: utf-8
 require 'active_record'
 require 'database_cleaner'
 require 'pry'

@@ -1,3 +1,4 @@
+# coding: utf-8
 require 'activerecord/attr/stripper/version'
 require 'activerecord/attr/stripper/attr_stripper'
 require 'activerecord/attr/stripper/target'
