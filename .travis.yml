@@ -11,3 +11,5 @@ rvm:
 notifications:
   email:
     - muryoimpl@gmail.com
+script:
+  - bundle exec rspec spec
