@@ -27,12 +27,7 @@ module ActiveRecord
         private
 
         def strip(attr_value, opts)
-          stripped_value =
-            if opts[:zenkaku]
-              attr_value.gsub(/\A(\s|　)+|(\s|　)+\z/, '')
-            else
-              attr_value.strip
-            end
+          stripped_value = attr_value.gsub(/\A(\s|　)+|(\s|　)+\z/, '')
 
           if opts[:blank_to_nil]
             stripped_value.presence

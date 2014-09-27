@@ -23,7 +23,7 @@ describe ActiveRecord::Attr::Stripper do
           post.valid?
         end
 
-        it { expect(post.title).to eq '　test 　' }
+        it { expect(post.title).to eq 'test' }
         it { expect(post.description).to eq TEST_VALUE }
       end
 
@@ -39,37 +39,10 @@ describe ActiveRecord::Attr::Stripper do
     end
 
     context 'with options' do
-      describe ':zenkaku' do
-        before do
-          Post.class_eval do
-            strip_attrs :title, zenkaku: true
-          end
-        end
-
-        context 'when attr includes blank' do
-          before do
-            post.valid?
-          end
-
-          it { expect(post.title).to eq 'test' }
-          it { expect(post.description).to eq TEST_VALUE }
-        end
-
-        context 'when attr includes only blank' do
-          before do
-            post.title = ' 　　 '
-            post.valid?
-          end
-
-          it { expect(post.title).to eq '' }
-          it { expect(post.description).to eq TEST_VALUE }
-        end
-      end
-
       describe ':blank_to_nil' do
         before do
           Post.class_eval do
-            strip_attrs :title, zenkaku: true, blank_to_nil: true
+            strip_attrs :title, blank_to_nil: true
           end
         end
 
