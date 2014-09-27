@@ -1,25 +1,40 @@
 activerecord-attr-stripper
 ==========================
 
-A ActiveRecord plugin which executes String#strip attributes before validation.
+A ActiveRecord plugin which removes leading and trailing whitespace(include zenkaku space) of attributes before validation.
 
 ## Installation
 
 Add this line to your application's Gemfile:
-
+```ruby
     gem 'activerecord-attr-stripper'
+```
 
 And then execute:
-
+```ruby
     $ bundle
-
+```
 Or install it yourself as:
-
+```ruby
     $ gem install activerecord-attr-stripper
+```
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+class Post < ActiveRecord::Base
+  include ActiveRecord::Attr::Stripper
+
+  strip_attrs :title, :description, blank_to_nil: true
+end
+
+post = Post.new(title: ' 　this is title 　', description: '　')
+post.valid?
+puts post.title       #=> 'this is title'
+puts post.description #=> nil
+```
+
+`blank_to_nil` option is true, attribute's value returns nil if the attribute is '' after removing leading and tailing whitespace.
 
 ## Contributing
 
